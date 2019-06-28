@@ -23,15 +23,14 @@ import java.util.Map;
 public class RecycAdaper extends RecyclerView.Adapter<RecycAdaper.ViewHolder> {
 
     List<bean.DataBean.ItemsBean> list = new ArrayList<>();
-    private Map<Integer, Boolean> checkStatus = new HashMap<>();
+    //  private Map<Integer, Boolean> checkStatus = new HashMap<>();
     private List<Boolean> booleans = new ArrayList<>();
 
 
     private List<String> lists;
-    double maxs;
     Context context;
 
-    private void initData() {
+/*    private void initData() {
         lists = new ArrayList<String>();
         for (int i = 0; i < 50; i++) {
             lists.add("CheckBox" + i);
@@ -45,7 +44,7 @@ public class RecycAdaper extends RecyclerView.Adapter<RecycAdaper.ViewHolder> {
             //更改指定位置的数据
             checkStatus.put(i, flag);
         }
-    }
+    }*/
 
 
     public RecycAdaper(Context context) {
@@ -177,17 +176,17 @@ public class RecycAdaper extends RecyclerView.Adapter<RecycAdaper.ViewHolder> {
         }
     }
 
-    public void couption( ){
+    public void couption() {
 
-       double maxs =0;
+        double maxs = 0;
         for (int j = 0; j < this.booleans.size(); j++) {
-            if (booleans.get(j)==true){
-                maxs+=list.get(j).getPrice();
+            if (booleans.get(j) == true) {
+                maxs += list.get(j).getPrice();
             }
         }
 
-        DecimalFormat    df   = new DecimalFormat("######0.00");
-        MainActivity.mMax.setText(""+ df.format(maxs));
+        DecimalFormat df = new DecimalFormat("######0.00");
+        MainActivity.mMax.setText("" + df.format(maxs));
 
     }
 }
